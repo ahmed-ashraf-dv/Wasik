@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وثيق - تسهيل التواصل بين المهنيين والعملاء</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap");
+
+      :root {
+        --primary-color: #0a66c2;
+        --primary-light: #e8f1fa;
+        --primary-dark: #004182;
+        --secondary-color: #34a853;
+        --accent-color: #ff6b6b;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fa;
+        --gray-color: #6c757d;
+        --light-gray: #e9ecef;
+        --success-color: #28a745;
+        --warning-color: #ffc107;
+        --danger-color: #dc3545;
+        --info-color: #17a2b8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: #f5f7fa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 15px 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .logo-highlight {
+        color: var(--secondary-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dark-color);
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--primary-color);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-light);
+      }
+
+      .btn-success {
+        background-color: var(--success-color);
+        color: white;
+        border: 2px solid var(--success-color);
+      }
+
+      .btn-success:hover {
+        background-color: #218838;
+        border-color: #218838;
+      }
+
+      main {
+        padding: 40px 0;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 40px 0;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--primary-dark);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: var(--gray-color);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 12px 24px;
+        background-color: white;
+        color: var(--dark-color);
+        border: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 8px;
+        margin: 0 5px 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .tab-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .user-flow {
+        background-color: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+      }
+
+      .flow-title {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary-light);
+        display: flex;
+        align-items: center;
+      }
+
+      .flow-title i {
+        margin-left: 10px;
+        color: var(--primary-color);
+      }
+
+      .flow-section {
+        margin-bottom: 30px;
+      }
+
+      .flow-section h3 {
+        font-size: 1.4rem;
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .flow-section h3 i {
+        margin-left: 10px;
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+      }
+
+      .step-list {
+        list-style: none;
+        padding-right: 20px;
+      }
+
+      .step-list li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-right: 30px;
+      }
+
+      .step-list li:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+      }
+
+      .step-list li:after {
+        content: "";
+        position: absolute;
+        right: 5px;
+        top: 20px;
+        width: 2px;
+        height: calc(100% + 2px);
+        background-color: var(--primary-light);
+      }
+
+      .step-list li:last-child:after {
+        display: none;
+      }
+
+      .sub-list {
+        list-style: none;
+        padding-right: 20px;
+        margin: 10px 0;
+      }
+
+      .sub-list li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-right: 20px;
+      }
+
+      .sub-list li:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+      }
+
+      .sub-list li:after {
+        display: none;
+      }
+
+      .note {
+        background-color: var(--primary-light);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-right: 4px solid var(--primary-color);
+      }
+
+      .note-title {
+        font-weight: 600;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .note-title i {
+        margin-left: 8px;
+      }
+
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-light);
+      }
+
+      .social-links {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin: 0 10px;
+        color: white;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-color);
+      }
+
+      .copyright {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      @media screen and (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+        }
+
+        nav ul {
+          margin-top: 20px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav li {
+          margin: 0 10px 10px;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .tab-btn {
+          font-size: 0.9rem;
+          padding: 10px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo">وثيق<span class="logo-highlight">.</span></a>
+          <nav>
+            <ul>
+              <li><a href="#">الرئيسية</a></li>
+              <li><a href="#">عن وثيق</a></li>
+              <li><a href="#">المهنيين</a></li>
+              <li><a href="#">المساعدة</a></li>
+            </ul>
+          </nav>
+          <div>
+            <a href="#" class="btn btn-outline">تسجيل الدخول</a>
+            <a href="#" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero">
+          <h1>تعرّف على سير عمل منصة "وثيق"</h1>
+          <p>
+            منصة "وثيق" توفر بيئة إلكترونية موثوقة تجمع المهنيين المتخصصين
+            بالعملاء، وتسهل عملية التواصل وتقديم الخدمات المهنية بكل يسر وأمان
+          </p>
+        </section>
+
+        <div class="tabs">
+          <button
+            class="tab-btn active"
+            onclick="openTab(event, 'professional')"
+          >
+            <i class="fas fa-user-tie"></i> المهني
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'client')">
+            <i class="fas fa-user"></i> العميل
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'admin')">
+            <i class="fas fa-user-shield"></i> مدير المنصة
+          </button>
+        </div>
+
+        <div id="professional" class="tab-content active">
+          <div class="user-flow">
+            <h2 class="flow-title">
+              <i class="fas fa-user-tie"></i> User Flow 1: المهني
+            </h2>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-user-plus"></i> التسجيل والاشتراك</h3>
+              <ul class="step-list">
+                <li>
+                  يزور المهني موقع "وثيق" الإلكتروني أو يحمّل تطبيق "وثيق"
+                  للهاتف المحمول.
+                </li>
+                <li>ينقر على خيار "تسجيل" أو "إنشاء حساب جديد".</li>
+                <li>
+                  يملأ استمارة التسجيل بالمعلومات التالية:
+                  <ul class="sub-list">
+                    <li>الاسم الكامل.</li>
+                    <li>البريد الإلكتروني.</li>
+                    <li>رقم الهاتف المحمول.</li>
+                    <li>كلمة المرور (ويقوم بتأكيد كلمة المرور).</li>
+                  </ul>
+                </li>
+                <li>
+                  يختار نوع المهنة من قائمة منسدلة (مثل: محامٍ، مسوق عقاري،
+                  معلم، مستشار، إلخ.).
+                </li>
+                <li>
+                  يقوم بإدخال المعلومات المهنية التفصيلية:
+                  <ul class="sub-list">
+                    <li>التخصصات الدقيقة ضمن مجال مهنته.</li>
+                    <li>عدد سنوات الخبرة في مجال عمله.</li>
+                    <li>الشهادات الأكاديمية أو المهنية التي حصل عليها.</li>
+                    <li>
+                      التراخيص المهنية (مع إمكانية رفع المستندات والوثائق
+                      الثبوتية).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  يوافق على الشروط والأحكام وسياسة الخصوصية الخاصة بمنصة "وثيق".
+                </li>
+                <li>ينقر على زر "تسجيل" أو "إنهاء التسجيل".</li>
+                <li>
+                  يتلقى رسالة تأكيد عبر البريد الإلكتروني (أو رسالة نصية قصيرة
+                  SMS) لتفعيل الحساب. تحتوي الرسالة على رابط تفعيل.
+                </li>
+                <li>
+                  ينقر على رابط التفعيل المرسل إليه لإتمام عملية تفعيل الحساب.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3>
+                <i class="fas fa-id-card"></i> إعداد الصفحة الشخصية (الملف
+                التعريفي) والتحكم
+              </h3>
+              <ul class="step-list">
+                <li>
+                  يسجل المهني الدخول إلى لوحة التحكم الخاصة به باستخدام بريده
+                  الإلكتروني وكلمة المرور.
+                </li>
+                <li>ينتقل إلى صفحة إعداد الملف الشخصي (الصفحة الشخصية).</li>
+                <li>
+                  يقوم بإضافة أو تعديل المعلومات التالية:
+                  <ul class="sub-list">
+                    <li>صورة شخصية احترافية.</li>
+                    <li>
+                      نبذة تعريفية موجزة وجذابة (تعريف عن نفسه وعن الخدمات التي
+                      يقدمها).
+                    </li>
+                    <li>
+                      معلومات الاتصال (رقم الهاتف، البريد الإلكتروني، إلخ.).
+                    </li>
+                    <li>
+                      خانة مخصصة لعرض الرخصة المهنية (إذا كانت المهنة التي
+                      يمارسها تتطلب ترخيصًا رسميًا).
+                    </li>
+                    <li>
+                      خانة اختيارية لكتابة ونشر الأخبار والمقالات المتعلقة بمجال
+                      تخصصه.
+                    </li>
+                    <li>
+                      خانة مخصصة لربط حسابات التواصل الاجتماعي الخاصة به (مثل:
+                      تويتر، لينكدإن، انستقرام).
+                    </li>
+                    <li>
+                      خانة لعرض الإحصائيات (مثل: عدد زوار الصفحة الشخصية، عدد
+                      طلبات الخدمات، إلخ.).
+                    </li>
+                  </ul>
+                </li>
+                <li>يحفظ جميع التغييرات التي أجراها على صفحته الشخصية.</li>
+                <li>
+                  يوجد زر "عرض الملف الشخصي من منظور العميل" يتيح للمهني معاينة
+                  صفحته الشخصية كما ستظهر للعملاء/الزوار.
+                </li>
+                <li>
+                  يقوم بتخصيص مظهر الصفحة الشخصية:
+                  <ul class="sub-list">
+                    <li>
+                      يختار من بين أربعة قوالب (ثيمات) محددة مسبقًا توفرها
+                      المنصة.
+                    </li>
+                    <li>
+                      يقوم بتخصيص وتعديل ألوان القالب (الثيم) الذي اختاره.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3>
+                <i class="fas fa-briefcase"></i> إضافة الخدمات وإدارة طريقة
+                العرض
+              </h3>
+              <ul class="step-list">
+                <li>
+                  ينتقل المهني إلى قسم "إدارة الخدمات" الموجود في لوحة التحكم
+                  الخاصة به.
+                </li>
+                <li>ينقر على زر "إضافة خدمة جديدة".</li>
+                <li>يختار الطريقة التي يرغب بها في عرض الخدمة:</li>
+                <li>
+                  عرض الخدمة كمنتج بسعر ثابت:
+                  <ul class="sub-list">
+                    <li>
+                      يقوم بإدخال اسم الخدمة (مثل: استشارة قانونية في قضايا
+                      الأحوال الشخصية).
+                    </li>
+                    <li>يكتب وصفًا تفصيليًا للخدمة التي يقدمها.</li>
+                    <li>يحدد سعر الخدمة (أو نطاق سعري للخدمة).</li>
+                    <li>
+                      يحدد مدة تقديم الخدمة (إذا كانت الخدمة محددة بوقت معين).
+                    </li>
+                    <li>يضيف صورة توضيحية للخدمة (اختياري).</li>
+                    <li>
+                      يحدد الشروط والأحكام الخاصة بتقديم الخدمة (اختياري).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  عرض الخدمة كطلب خدمة (بنظام عرض السعر):
+                  <ul class="sub-list">
+                    <li>
+                      يقوم بإدخال اسم الخدمة (مثل: كتابة محتوى تسويقي لموقع
+                      إلكتروني).
+                    </li>
+                    <li>يكتب وصفًا تفصيليًا للخدمة.</li>
+                    <li>
+                      يحدد الشروط والأحكام الخاصة بتقديم الخدمة (اختياري).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  يحدد إعدادات اضافية للخدمة:
+                  <ul class="sub-list">
+                    <li>
+                      يقرر ما إذا كان يرغب في تفعيل صفحة تعبئة النموذج المسبق
+                      للعملاء أم لا.
+                    </li>
+                    <li>
+                      يحدد أنواع التواصل المتاحة مع العملاء لهذه الخدمة (مثل:
+                      محادثة نصية، محادثة صوتية، مكالمة فيديو، اجتماع حضوري).
+                    </li>
+                    <li>
+                      يقوم بتفعيل أو تعطيل خيار "القبول التلقائي للطلبات" (في
+                      حال تفعيل هذا الخيار، سيتم قبول طلبات العملاء لهذه الخدمة
+                      تلقائيًا دون الحاجة إلى موافقة يدوية من المهني).
+                    </li>
+                    <li>يحدد مدة عدم البت في الطلب.</li>
+                  </ul>
+                </li>
+                <li>يحفظ جميع التغييرات والإعدادات التي قام بها للخدمة.</li>
+                <li>
+                  يمكن للمهني اختيار إظهار أو إخفاء أي من نوعي عرض الخدمات
+                  (كمنتج بسعر ثابت أو كطلب خدمة) في صفحته الشخصية.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="far fa-calendar-alt"></i> إدارة المواعيد</h3>
+              <ul class="step-list">
+                <li>ينتقل المهني إلى قسم "إدارة المواعيد" في لوحة التحكم.</li>
+                <li>
+                  يحدد الأوقات المتاحة له لتقديم خدماته (مثل: أيام الأسبوع
+                  المتاحة، الساعات المتاحة خلال اليوم).
+                </li>
+                <li>يراجع طلبات الحجز الواردة من العملاء.</li>
+                <li>
+                  يقوم بتأكيد طلب الحجز، أو رفضه، أو اقتراح موعد بديل لكل طلب.
+                </li>
+                <li>
+                  يتلقى إشعارات فورية (تنبيهات) عند وصول طلب حجز جديد من أحد
+                  العملاء.
+                </li>
+                <li>
+                  يمكنه مزامنة مواعيد الحجوزات مع التقويم الشخصي الخاص به
+                  (اختياري).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-comments"></i> التواصل مع العملاء</h3>
+              <ul class="step-list">
+                <li>
+                  يتلقى المهني رسائل واستفسارات من العملاء من خلال:
+                  <ul class="sub-list">
+                    <li>
+                      نظام الدردشة النصية المباشرة المدمج داخل منصة "وثيق".
+                    </li>
+                    <li>المكالمات الصوتية (إذا كانت الخدمة تتطلب ذلك).</li>
+                    <li>مكالمات الفيديو (إذا كانت الخدمة تتطلب ذلك).</li>
+                  </ul>
+                </li>
+                <li>
+                  يقوم بالرد على استفسارات العملاء وطلباتهم في أسرع وقت ممكن.
+                </li>
+                <li>
+                  يقدم الاستشارات المهنية أو الخدمات المتفق عليها مع العملاء.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3>
+                <i class="fas fa-money-bill-wave"></i> إدارة الفواتير والمدفوعات
+              </h3>
+              <ul class="step-list">
+                <li>
+                  ينتقل المهني إلى قسم "إدارة الفواتير" أو "المدفوعات" في لوحة
+                  التحكم.
+                </li>
+                <li>
+                  يراجع الفواتير الصادرة للعملاء مقابل الخدمات التي قدمها.
+                </li>
+                <li>
+                  يتابع حالة المدفوعات الخاصة بكل فاتورة (مثل: تم الدفع، قيد
+                  الانتظار، مرفوضة).
+                </li>
+                <li>
+                  يقوم بطلب سحب أرباحه من المنصة (بعد أن يصل رصيده إلى الحد
+                  الأدنى المسموح به للسحب).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-star"></i> إدارة التقييمات والمراجعات</h3>
+              <ul class="step-list">
+                <li>
+                  يراجع التقييمات والمراجعات التي يتركها العملاء بعد تلقيهم
+                  الخدمة.
+                </li>
+                <li>
+                  يمكنه الرد على التقييمات والمراجعات التي يتركها العملاء
+                  (اختياري).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-bullhorn"></i> التسويق والترويج</h3>
+              <ul class="step-list">
+                <li>
+                  يحصل المهني على رابط فريد (اسم مستخدم/username) خاص بصفحته
+                  الشخصية على منصة "وثيق".
+                </li>
+                <li>
+                  يحصل المهني على رمز استجابة سريعة (باركود QR Code) خاص بصفحته
+                  الشخصية.
+                </li>
+                <li>
+                  يمكن للمهني مشاركة الرابط الفريد والباركود الخاصين بصفحته في
+                  أي مكان يريده (مثل: وسائل التواصل الاجتماعي، البريد
+                  الإلكتروني، بطاقات العمل، التوقيع الإلكتروني، إلخ.).
+                </li>
+                <li>يمكن للمهني كتابة ونشر منشورات.</li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-chart-bar"></i> التقارير</h3>
+              <ul class="step-list">
+                <li>
+                  يمكن للمهني الاطلاع على تقارير مفصلة حول زيارات صفحته الشخصية
+                  (مثل: عدد الزيارات، مصادر الزيارات، معدل التحويل إلى طلبات) من
+                  خلال لوحة التحكم.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-headset"></i> الدعم الفني</h3>
+              <ul class="step-list">
+                <li>
+                  يمكن للمهني فتح "تذكرة دعم فني" من خلال لوحة التحكم للتواصل مع
+                  فريق الدعم الفني الخاص بمنصة "وثيق" في حال واجه أي مشكلة
+                  تقنية.
+                </li>
+                <li>
+                  يتلقى المهني إشعارات عبر تطبيق واتساب (WhatsApp) إذا لم يقم
+                  بالرد على رسائل فريق الدعم الفني خلال 5 دقائق.
+                </li>
+              </ul>
+              <div class="note">
+                <h4 class="note-title">
+                  <i class="fas fa-info-circle"></i> معلومة هامة
+                </h4>
+                <p>
+                  يتم توفير دعم فني سريع ومتاح لمساعدة المهنيين في حل أي مشكلات
+                  تقنية قد تواجههم.
+                </p>
+              </div>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</h3>
+              <ul class="step-list">
+                <li>
+                  ينقر المهني على زر "تسجيل الخروج" الموجود في لوحة التحكم
+                  لإنهاء جلسته والخروج من حسابه على منصة "وثيق".
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="client" class="tab-content">
+          <div class="user-flow">
+            <h2 class="flow-title">
+              <i class="fas fa-user"></i> User Flow 2: العميل
+            </h2>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-search"></i> البحث عن خدمة</h3>
+              <ul class="step-list">
+                <li>
+                  يزور العميل موقع "وثيق" الإلكتروني أو يحمّل تطبيق "وثيق"
+                  للهاتف المحمول.
+                </li>
+                <li>
+                  يستخدم شريط البحث الموجود في الصفحة الرئيسية لإدخال نوع الخدمة
+                  التي يبحث عنها (مثلاً: "محامي عقاري متخصص في قضايا الإرث"،
+                  "مدرس رياضيات للمرحلة الثانوية"، "استشارة أسرية متخصصة في
+                  مشاكل المراهقين").
+                </li>
+                <li>
+                  تظهر له قائمة بالمهنيين المسجلين في المنصة الذين يقدمون الخدمة
+                  التي يبحث عنها.
+                </li>
+                <li>
+                  يمكن للعميل تصفية نتائج البحث (فلترة) حسب عدة معايير:
+                  <ul class="sub-list">
+                    <li>التخصص الدقيق للمهني.</li>
+                    <li>تقييمات العملاء السابقين للمهني.</li>
+                    <li>نطاق سعر الخدمة.</li>
+                    <li>
+                      موقع المهني (إذا كان تقديم الخدمة يتطلب تواجدًا شخصيًا).
+                    </li>
+                    <li>اللغة التي يتحدث بها المهني.</li>
+                  </ul>
+                </li>
+                <li>يختار المهني الذي يراه مناسبا.</li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-user-circle"></i> استعراض صفحة المهني</h3>
+              <ul class="step-list">
+                <li>
+                  يقرأ العميل النبذة التعريفية التي كتبها المهني عن نفسه وعن
+                  خبراته المهنية.
+                </li>
+                <li>
+                  يراجع قائمة الخدمات التي يقدمها المهني وأسعار كل خدمة (إذا
+                  كانت الخدمات معروضة كأسعار ثابتة).
+                </li>
+                <li>
+                  يشاهد تقييمات ومراجعات العملاء السابقين الذين تعاملوا مع
+                  المهني.
+                </li>
+                <li>
+                  يطلع على الرخصة المهنية الخاصة بالمهني (إذا كانت المهنة التي
+                  يمارسها تتطلب ترخيصًا).
+                </li>
+                <li>
+                  يتصفح خانة الأخبار والمقالات التي نشرها المهني (إن وجدت).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-handshake"></i> طلب الخدمة/حجز موعد</h3>
+              <ul class="step-list">
+                <li>
+                  يختار العميل الخدمة التي يرغب في الحصول عليها من قائمة خدمات
+                  المهني.
+                </li>
+                <li>
+                  إذا كانت الخدمة معروضة "كمنتج بسعر ثابت":
+                  <ul class="sub-list">
+                    <li>
+                      إذا كان المهني قد قام بتفعيل صفحة تعبئة النموذج المسبق:
+                      <ul class="sub-list">
+                        <li>
+                          يقوم العميل بملء النموذج المسبق (يمكن أن يكون النموذج
+                          نصيًا أو صوتيًا) ويقوم بإرفاق أي ملفات مطلوبة (إذا كان
+                          هناك حاجة لإرفاق ملفات).
+                        </li>
+                        <li>يختار نوع التواصل الذي يفضله.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      إذا كان المهني متواجدًا على المنصة في نفس وقت طلب الخدمة:
+                      <ul class="sub-list">
+                        <li>
+                          يظهر للعميل خيار "الاتصال الآن" (إذا كان نوع التواصل
+                          الذي اختاره العميل يسمح بالاتصال الفوري، مثل: مكالمة
+                          صوتية أو فيديو).
+                        </li>
+                        <li>يظهر للعميل أيضًا خيار "تحديد موعد لاحق".</li>
+                      </ul>
+                    </li>
+                    <li>
+                      إذا لم يكن المهني متواجدًا على المنصة في ذلك الوقت، أو إذا
+                      اختار العميل "تحديد موعد لاحق":
+                      <ul class="sub-list">
+                        <li>
+                          يختار العميل الموعد الذي يناسبه من قائمة المواعيد
+                          المتاحة التي حددها المهني مسبقًا.
+                        </li>
+                        <li>
+                          يتم توجيه العميل إلى صفحة الدفع الإلكتروني لإتمام
+                          عملية الدفع.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  إذا كانت الخدمة معروضة "كطلب خدمة (بنظام عرض السعر)":
+                  <ul class="sub-list">
+                    <li>
+                      يقوم العميل بملء النموذج المسبق (يمكن أن يكون النموذج
+                      نصيًا أو صوتيًا) ويقوم بإرفاق أي ملفات مطلوبة (إذا كان
+                      هناك حاجة لإرفاق ملفات).
+                    </li>
+                    <li>يختار العميل نوع التواصل الذي يفضله.</li>
+                    <li>
+                      ينتظر العميل حتى يقوم المهني بإرسال عرض سعر للخدمة
+                      المطلوبة.
+                    </li>
+                    <li>
+                      إذا وافق العميل على عرض السعر الذي قدمه المهني:
+                      <ul class="sub-list">
+                        <li>
+                          إذا كان المهني متواجدًا على المنصة في نفس وقت طلب
+                          الخدمة:
+                          <ul class="sub-list">
+                            <li>
+                              يظهر للعميل خيار "الاتصال الآن" (إذا كان نوع
+                              التواصل الذي اختاره العميل يسمح بالاتصال الفوري).
+                            </li>
+                            <li>يظهر للعميل أيضًا خيار "تحديد موعد لاحق".</li>
+                          </ul>
+                        </li>
+                        <li>
+                          إذا لم يكن المهني متواجدًا على المنصة، أو إذا اختار
+                          العميل "تحديد موعد لاحق":
+                          <ul class="sub-list">
+                            <li>
+                              يختار العميل الموعد الذي يناسبه من قائمة المواعيد
+                              المتاحة.
+                            </li>
+                            <li>يتم توجيه العميل إلى صفحة الدفع الإلكتروني.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-comments-alt"></i> التواصل مع المهني</h3>
+              <ul class="step-list">
+                <li>
+                  يمكن للعميل إرسال رسالة إلى المهني عبر نظام الدردشة النصية
+                  المباشرة لطرح أي أسئلة أو استفسارات إضافية.
+                </li>
+                <li>
+                  قد يتلقى العميل مكالمة صوتية أو مكالمة فيديو من المهني (حسب
+                  طبيعة الخدمة المطلوبة ونوع التواصل الذي تم اختياره). تستخدم
+                  المنصة تقنية Video SDK لإجراء مكالمات الفيديو والصوت.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-hand-holding-heart"></i> تلقي الخدمة</h3>
+              <ul class="step-list">
+                <li>
+                  يتلقى العميل الخدمة المتفق عليها مع المهني (مثل: استشارة
+                  قانونية، حصة تعليمية خاصة، جلسة استشارة أسرية، تصميم شعار،
+                  كتابة مقال، إلخ.).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-credit-card"></i> الدفع</h3>
+              <ul class="step-list">
+                <li>
+                  يقوم العميل بدفع مقابل الخدمة التي حصل عليها من خلال إحدى طرق
+                  الدفع الإلكتروني المتاحة على منصة "وثيق" (مثل: بطاقة الائتمان،
+                  بطاقة الخصم المباشر، التحويل البنكي، المحافظ الإلكترونية،
+                  إلخ.).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-star-half-alt"></i> ترك تقييم ومراجعة</h3>
+              <ul class="step-list">
+                <li>
+                  بعد تلقي الخدمة، يُطلب من العميل (ويُفضل) أن يترك تقييمًا
+                  (عادةً ما يكون بنظام النجوم) ومراجعة مكتوبة للمهني يصف فيها
+                  تجربته مع الخدمة.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-ban"></i> في حالة رفض المهني</h3>
+              <ul class="step-list">
+                <li>يسترد العميل المبلغ الذي قام بدفعه بالكامل بشكل تلقائي.</li>
+              </ul>
+              <div class="note">
+                <h4 class="note-title">
+                  <i class="fas fa-exclamation-triangle"></i> تنويه
+                </h4>
+                <p>
+                  في حال قام المهني برفض طلب الخدمة، يتم استرجاع المبلغ المدفوع
+                  للعميل تلقائياً وبشكل كامل لضمان حقوق العملاء.
+                </p>
+              </div>
+            </div>
+
+            <div class="flow-section">
+              <h3>
+                <i class="fas fa-th-large"></i> تصفح الخدمات الأخرى (اختياري)
+              </h3>
+              <ul class="step-list">
+                <li>
+                  يمكن للعميل تصفح خدمات أخرى متاحة على منصة "وثيق" يقدمها
+                  مهنيون آخرون.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</h3>
+              <ul class="step-list">
+                <li>ينقر العميل على زر "تسجيل الخروج" من حسابه.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin" class="tab-content">
+          <div class="user-flow">
+            <h2 class="flow-title">
+              <i class="fas fa-user-shield"></i> User Flow 3: مدير المنصة
+              (Admin)
+            </h2>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h3>
+              <ul class="step-list">
+                <li>
+                  يدخل مدير المنصة (المشرف) على لوحة التحكم الإدارية الخاصة
+                  بمنصة "وثيق".
+                </li>
+                <li>يقوم بإدخال اسم المستخدم وكلمة المرور الخاصين به.</li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-users-cog"></i> إدارة المهنيين</h3>
+              <ul class="step-list">
+                <li>عرض قائمة كاملة بجميع المهنيين المسجلين على المنصة.</li>
+                <li>تفعيل أو تعطيل حسابات المهنيين (حسب الحاجة).</li>
+                <li>
+                  التحقق من هوية المهنيين ومراجعة تراخيصهم المهنية يدويًا.
+                </li>
+                <li>
+                  الاطلاع على الإحصائيات التفصيلية الخاصة بكل مهني (مثل: عدد
+                  العملاء، عدد الطلبات المكتملة، الأرباح، التقييمات، إلخ.).
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-users"></i> إدارة العملاء</h3>
+              <ul class="step-list">
+                <li>عرض قائمة كاملة بجميع العملاء المسجلين على المنصة.</li>
+                <li>
+                  حظر أو تقييد حسابات العملاء المخالفين لسياسات المنصة (إذا لزم
+                  الأمر).
+                </li>
+                <li>عرض تاريخ طلبات الخدمات الخاصة بكل عميل.</li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3>
+                <i class="fas fa-clipboard-check"></i> إدارة الطلبات والخدمات
+              </h3>
+              <ul class="step-list">
+                <li>
+                  عرض جميع طلبات الخدمات (وتصنيفها حسب حالتها: قيد المراجعة،
+                  جارية، مكتملة، ملغاة).
+                </li>
+                <li>
+                  التدخل الإداري لحل أي نزاعات قد تنشأ بين المهنيين والعملاء.
+                </li>
+                <li>مراجعة الخدمات التي يقدمها المهنيون على المنصة.</li>
+                <li>
+                  تفعيل أو تعطيل الخدمات التي تخالف سياسات وشروط استخدام المنصة.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-coins"></i> إدارة المدفوعات</h3>
+              <ul class="step-list">
+                <li>
+                  متابعة جميع المعاملات المالية التي تتم على المنصة (مثل: عمليات
+                  الإيداع، السحوبات، عمولات المنصة).
+                </li>
+                <li>إلغاء أو تعديل المدفوعات المعلقة (إذا لزم الأمر).</li>
+                <li>
+                  إصدار تقارير مالية دورية (يومية، أسبوعية، شهرية، سنوية).
+                </li>
+                <li>
+                  تحديد وتعديل نسب العمولات التي تحصل عليها المنصة من المهنيين
+                  مقابل كل خدمة.
+                </li>
+                <li>
+                  مراجعة طلبات سحب الأرباح التي يقدمها المهنيون، وتفعيلها أو
+                  إلغاؤها بناءً على السياسات المالية للمنصة.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-cog"></i> إدارة المحتوى والإعلانات</h3>
+              <ul class="step-list">
+                <li>
+                  تعديل نصوص الصفحات الأساسية للمنصة (مثل: صفحة سياسة الاستخدام،
+                  صفحة الشروط والأحكام، صفحة الأسئلة الشائعة).
+                </li>
+                <li>
+                  نشر الإعلانات أو التنبيهات الهامة للمستخدمين (المهنيين
+                  والعملاء).
+                </li>
+                <li>
+                  متابعة الشكاوى والاقتراحات التي يقدمها المستخدمون، والرد
+                  عليها.
+                </li>
+                <li>
+                  مراجعة التقييمات السلبية التي يتركها العملاء للمهنيين، واتخاذ
+                  الإجراءات المناسبة عند الضرورة.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-cogs"></i> إدارة إعدادات النظام</h3>
+              <ul class="step-list">
+                <li>
+                  إدارة صلاحيات المشرفين الآخرين:
+                  <ul class="sub-list">
+                    <li>إنشاء حسابات جديدة للمشرفين.</li>
+                    <li>
+                      تحديد الصلاحيات الممنوحة لكل مشرف (مثل: صلاحية الوصول إلى
+                      معلومات محددة، صلاحية إجراء تعديلات معينة، إلخ.).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  إعدادات الأمان:
+                  <ul class="sub-list">
+                    <li>
+                      تفعيل نظام المصادقة الثنائية (2FA) لحسابات المشرفين.
+                    </li>
+                    <li>
+                      تسجيل جميع الأنشطة التي يقوم بها المشرفون في سجل خاص (سجل
+                      التدقيق الأمني).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  ضبط إعدادات تحسين محركات البحث (SEO) لكل صفحة من صفحات المنصة.
+                </li>
+              </ul>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-user-lock"></i> الحظر التلقائي للحسابات</h3>
+              <ul class="step-list">
+                <li>
+                  حظر الحسابات التي ترتكب 5 اخطاء في كلمة المرور, او 3 اخطاء في
+                  الكود.
+                </li>
+              </ul>
+              <div class="note">
+                <h4 class="note-title">
+                  <i class="fas fa-shield-alt"></i> إجراءات أمان
+                </h4>
+                <p>
+                  لتعزيز الأمان، يتم حظر الحسابات تلقائيًا بعد تجاوز عدد محدد من
+                  محاولات تسجيل الدخول الفاشلة.
+                </p>
+              </div>
+            </div>
+
+            <div class="flow-section">
+              <h3><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</h3>
+              <ul class="step-list">
+                <li>
+                  ينقر مدير المنصة على زر "تسجيل الخروج" من لوحة التحكم الإدارية
+                  لإنهاء الجلسة.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <a href="#" class="footer-logo"
+          >وثيق<span class="logo-highlight">.</span></a
+        >
+        <div class="footer-links">
+          <a href="#">المحفظة</a>
+          <a href="#">إعادة تعيين كلمة المرور</a>
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="#">الأسئلة الشائعة</a>
+          <a href="#">اتصل بنا</a>
+          <a href="#">عن "وثيق"</a>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">© 2024 وثيق. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script>
+      function openTab(event, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
